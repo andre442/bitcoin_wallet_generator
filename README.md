@@ -1,7 +1,7 @@
-# bitcoin_wallet_generator
+# Bitcoin Wallet Generator
 The best cold storage method to keep your Bitcoins safe ;)
 
--This is a simple script to generate a valid key pair (public and private) on the bitcoin network. 
+-This is a simple script to generate a valid key pair (public and private) on the bitcoin network. To minimize risks, it is recommended to use this code on a computer disconnected from the internet and after creating the keys, print it on paper and keep it in a safe place. If you don't really know what you're doing... read more about this topic so you don't mess up: https://blockgeeks.com/guides/paper-wallet-guide/
 
 -In the 'dist' folder there is also an .exe file to generate the keys (in case you don't have python installed on your computer).
 
