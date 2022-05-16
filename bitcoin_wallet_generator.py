@@ -47,3 +47,35 @@ f= open("BTC_wallet.txt","a")
 f.write("Public Key: {} \r".format(BTC_public_key))
 f.write("Private Key: {} \r\n".format(BTC_private_key))
 f.close()
+
+#generating qr_codes
+import qrcode
+from PIL import Image
+from PIL import ImageDraw, ImageFont
+data = BTC_public_key
+#img_01 = qrcode.make(data)
+qr = qrcode.QRCode(version = 7,
+                    box_size = 15,
+                    border = 5)
+qr.add_data(data)
+qr.make(fit = True)
+img_01 = qr.make_image(fill_color = 'black',
+                    back_color = 'white')
+data = BTC_private_key
+qr = qrcode.QRCode(version = 7,
+                    box_size = 15,
+                    border = 5)
+qr.add_data(data)
+qr.make(fit = True)
+img_02 = qr.make_image(fill_color = 'red',
+                    back_color = 'white')
+img_01_size = img_01.size
+img_02_size = img_01.size
+new_im = Image.new('RGB', (2*img_01_size[0],1*img_01_size[1]), (250,250,250))
+draw = ImageDraw.Draw(new_im)
+fonts = ImageFont.truetype("arial.ttf",size=45)
+new_im.paste(img_01, (0,0))
+new_im.paste(img_02, (img_02_size[0],0))
+draw.text((75,5), "PUBLIC KEY", (0,0,0),font=fonts)
+draw.text((900,5),"PRIVATE KEY", (0,0,0),font=fonts)
+new_im.save("Wallet_QR_{}.png".format(BTC_public_key[ 0 : 5 ]), "PNG")
