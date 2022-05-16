@@ -41,3 +41,9 @@ else:
 #storing final keys
 BTC_public_key = bitcoinAddress.decode('utf-8')
 BTC_private_key = WIF.decode("utf-8")
+
+#generating .txt file
+f= open("BTC_wallet.txt","a")
+f.write("Public Key: {} \r".format(BTC_public_key))
+f.write("Private Key: {} \r\n".format(BTC_private_key))
+f.close()
