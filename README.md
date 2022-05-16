@@ -7,4 +7,7 @@ The best cold storage method to keep your Bitcoins safe ;)
 
 -At each run, new keys will be appended to the '.txt' file and also new images will be generated with a pair of qrcodes in '.png' format.
 
+-You can also generate your paper wallet from the link below. Bitadress is one of the most famous places to create keys, but beware of fake sites. It is also recommended when creating the keys to temporarily turn off your internet connection.
+https://www.bitaddress.org/ 
+
 And never forget, ALWAYS keep your keys safe.
